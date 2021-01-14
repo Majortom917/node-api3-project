@@ -2,6 +2,12 @@ const express = require('express');
 
 const server = express();
 
+server.use(express.json())
+
+server.use((req, res, next) => {
+  console.log('welcome to my app')
+  next()
+})
 // remember express by default cannot parse JSON in request bodies
 
 // global middlewares and routes need to be connected here
